@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300..700;1,300..700&display=swap");
+
+:root {
+  --main: hsl(240, 38%, 20%);
+  --second: hsl(240, 18%, 77%);
+  --shadow: hsla(240, 38%, 20%, 0.3);
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter Tight", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url(../images/pattern-bg.svg);
+  background-repeat: no-repeat;
+  background-position: 90% center;
+}
+
+blockquote {
+  font-size: 2.2em;
+  font-weight: 300;
+  color: var(--main);
+  margin-bottom: 40px;
+}
+
+cite {
+  font-style: normal;
+  font-size: 1em;
+  font-weight: 700;
+  color: var(--main);
+  letter-spacing: 1px;
+}
+
+span {
+  font-weight: 500;
+  color: var(--second);
+}
+
+section {
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.active {
+  display: flex;
+  animation: fade 0.8s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.testimonial__left {
+  position: relative;
+  margin: 0 11%;
+  padding-right: 450px;
+  z-index: 2;
+}
+
+.testimonial__right {
+  position: absolute;
+  right: 11%;
+}
+
+.testimonial__pic img {
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px var(--shadow);
+  z-index: -1;
+}
+
+.cont-btn {
+  position: absolute;
+  bottom: -20px;
+  left: 70px;
+  display: flex;
+  box-shadow: 0px 5px 7px var(--shadow);
+  background-color: white;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.cont-btn img {
+  padding: 15px 20px;
+  width: 50px;
+}
+
+.prev {
+  position: relative;
+  overflow: hidden;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.prev::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(135deg);
+  width: 150%;
+  height: 0;
+  background-color: var(--main);
+  opacity: 0.8;
+  transition: 0.4s ease-in-out;
+}
+
+.prev:hover::before {
+  height: 150%;
+}
+
+.next {
+  position: relative;
+  overflow: hidden;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.next::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 150%;
+  height: 0;
+  background-color: var(--main);
+  opacity: 0.8;
+  transition: 0.4s ease-in-out;
+}
+
+.next:hover::before {
+  height: 150%;
+}
