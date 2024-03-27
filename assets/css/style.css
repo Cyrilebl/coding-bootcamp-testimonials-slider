@@ -47,7 +47,7 @@ span {
   color: var(--second);
 }
 
-section {
+.testimonial {
   display: none;
   justify-content: center;
   align-items: center;

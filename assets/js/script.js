@@ -1,4 +1,4 @@
-const testimonials = document.querySelectorAll("section");
+const testimonials = document.querySelectorAll(".testimonial");
 const nbSlide = testimonials.length;
 let count = 0;
 
