@@ -4,14 +4,19 @@ let count = 0;
 
 function nextSlide() {
   testimonials[count].classList.remove("active");
+  testimonials[count].classList.remove("right");
   count = (count + 1) % nbSlide;
   testimonials[count].classList.add("active");
+  testimonials[count].classList.add("right");
 }
 
 function previewSlide() {
   testimonials[count].classList.remove("active");
+  testimonials[count].classList.remove("right");
+  testimonials[count].classList.remove("left");
   count = (count - 1 + nbSlide) % nbSlide;
   testimonials[count].classList.add("active");
+  testimonials[count].classList.add("left");
 }
 
 function keyPress(e) {
