@@ -20,9 +20,11 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-image: url(../images/pattern-bg.svg);
+  background-image: url(../images/pattern-bg.svg),
+    url(../images/pattern-curve.svg), url(../images/pattern-quotes.svg);
   background-repeat: no-repeat;
-  background-position: 90% center;
+  background-position: 90% center, bottom left, 20% 25%;
+  background-size: 675px, 40%, 9%;
 }
 
 blockquote {
@@ -66,7 +68,6 @@ section {
 }
 
 .testimonial__left {
-  position: relative;
   margin: 0 11%;
   padding-right: 450px;
   z-index: 2;
@@ -78,9 +79,10 @@ section {
 }
 
 .testimonial__pic img {
+  width: 100%;
+  height: 100%;
   border-radius: 5px;
   box-shadow: 3px 3px 5px var(--shadow);
-  z-index: -1;
 }
 
 .cont-btn {
@@ -145,4 +147,52 @@ section {
 
 .next:hover::before {
   height: 150%;
+}
+
+@media all and (max-width: 1100px) {
+  body {
+    background-image: url(../images/pattern-bg.svg),
+      url(../images/pattern-curve.svg), url(../images/pattern-quotes.svg);
+    background-position: 60% 70px, bottom left, center 425px;
+    background-size: 350px, 325px, 80px;
+  }
+
+  blockquote {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+  }
+
+  cite {
+    font-size: 1em;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.3;
+  }
+
+  section {
+    flex-direction: column-reverse;
+  }
+
+  .testimonial__left {
+    position: initial;
+    margin: 90px 20px;
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .testimonial__right {
+    position: initial;
+    right: 0;
+    margin: 70px 10px 10px 10px;
+  }
+
+  .testimonial__pic img {
+    width: 300px;
+  }
+
+  .cont-btn {
+    bottom: 230px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
